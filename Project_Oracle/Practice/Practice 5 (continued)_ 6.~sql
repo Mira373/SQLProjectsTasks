@@ -1,0 +1,6 @@
+SELECT  e.job_id, count(*)
+FROM employees e
+group by e.job_id
+having count(e.job_id)>1 
+
+

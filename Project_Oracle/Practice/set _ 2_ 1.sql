@@ -1,0 +1,14 @@
+﻿დაწერეთ სელექთი რომელიც გამოიტანს ისეთი თანამშრომლების სახელს, გვარს, მეილს და პოზიცია, რომლებიც არიან მენეჯერები 
+და დაქვემდებარებაში ჰყავთ მინიმუმ 1 თანამშრომელი მაინც, რომლის ხელფასიც აღემატება 8000  და ნაკლებია 15000-ზე ან მუშაობს პოზიციაზე: 'SH_CLERK'.
+
+SELECT  distinct  a.first_name,a.last_name,a.email,a.job_id
+from employees e 
+join employees a
+on e.manager_id=a.employee_id
+where (e.salary > 8000 and e.salary< 15000) or e.job_id='SH_CLERK';
+-----------sxvanairad 
+
+select first_name,last_name,email,job_id from employees 
+where employee_ID in (
+select distinct  manager_ID from employees 
+where (salary > 8000 and salary< 15000) or job_id='SH_CLERK')

@@ -1,0 +1,3 @@
+SELECT   round(avg(salary),0) "Average", Round ( MAX(salary), 0) "Maximum", round (MIN(salary),0 ) "Minimum"
+FROM employees e
+
